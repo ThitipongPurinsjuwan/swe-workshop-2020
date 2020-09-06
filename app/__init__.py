@@ -24,6 +24,9 @@ def submit():
     if validate_name(last_name) is not True:
         error_message = 'กรุณากรอกนามสกุลให้ถูกต้อง'
         return render_template('error.html', message=error_message)
+    if validate_id(id) is not True:
+        error_message = 'กรุณากรอกเลขบัตรประจำตัวให้ถูกต้อง'
+        return render_template('error.html', message=error_message)
 
     return render_template('success.html',
                            first_name=first_name,

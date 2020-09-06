@@ -27,6 +27,12 @@ class TestUtility(unittest.TestCase):
     def test_validate_id_False_with_valid_14(self):
         self.assertEqual(False, validate_id("12345678911234"))
 
+    def test_validate_id_False_with_valid_free(self):
+        self.assertEqual(False, validate_id(""))
+
+    def test_validate_id_False_with_valid_specialString(self):
+        self.assertEqual(False, validate_id("123456789112@"))
+
     def test_validate_phone_number_false_with_valid_test01(self):
         self.assertEqual(False, validate_phone_number("test01"))
 
