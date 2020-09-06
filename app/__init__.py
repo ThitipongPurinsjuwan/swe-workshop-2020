@@ -27,6 +27,9 @@ def submit():
     if validate_id(id) is not True:
         error_message = 'กรุณากรอกเลขบัตรประจำตัวให้ถูกต้อง'
         return render_template('error.html', message=error_message)
+    if validate_phone_number(tel) is not True:
+        error_message = 'กรุณากรอกหมายเลขโทรศัพท์ให้ถูกต้อง'
+        return render_template('error.html', message=error_message)
 
     return render_template('success.html',
                            first_name=first_name,
