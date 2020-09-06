@@ -17,9 +17,7 @@ def validate_id(id):
 
 
 def validate_phone_number(phone_number):
-    if len(phone_number) != 10:
-        return False
-    if not phone_number.isalnum():
-        return False
-    else:
+    if len(phone_number) == 10 and phone_number.isalnum():
         return True
+    else:
+        return False
