@@ -1,10 +1,25 @@
+import re
+
+
 def validate_name(name):
-    return True
+    special = re.compile('[@_!#$%^&*()<>?/\|}{~:\s\d]')
+    if(special.search(name) != None) or name == "":  # len(name) == 0
+        return False
+    else:
+        return True
 
 
 def validate_id(id):
-    return True
+    if id.isalnum() and len(id) == 13:
+        return True
+    else:
+        return False
 
 
 def validate_phone_number(phone_number):
-    return True
+    if len(phone_number) != 10:
+        return False
+    if not phone_number.isalnum():
+        return False
+    else:
+        return True
